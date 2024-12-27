@@ -1,0 +1,807 @@
+/* ==================================================
+   Variables Globales
+================================================== */
+:root {
+  --lime-green: #32cd32;
+  --dark-green: #228b22;
+  --deep-blue: #002855;
+  --overlay-opacity: 0.65; /* Transparencia de la superposición */
+  --white: #ffffff;
+  --black: #000000;
+  --dark-blue: #003554;
+  --bright-blue: #00b4d8;
+  --gray-blue: #33415c;
+  --light-gray: #f8f9fa;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --border-gray: #7d8597;
+  --hover-blue: #0353a4;
+  --btn-blue: #0466c8;
+  --deep-gray: #33415c;
+  --footer-black: #000000;
+  --footer-gray: #1a1a1a;
+  --hover-orange: #ff4500;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  --darka-blue: #0466c8;
+}
+
+/* ==================================================
+ General Reset
+================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Asegura un mejor manejo de los bordes y el padding */
+}
+
+
+
+body,
+html {
+  height: 100%;
+  overflow-x: hidden;
+  /* Evita desplazamiento horizontal */
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+  /* Consistencia en el cuerpo */
+  color: var(--white);
+  /* Usar variable para color blanco */
+}
+
+/* ==================================================
+   Tipografía General
+================================================== */
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #001845;
+  /* Azul profundo */
+}
+
+h4,
+h5,
+h6,
+ul li {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: #0466c8;
+  /* Azul vibrante */
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* ==================================================
+   Botones
+================================================== */
+button,
+.btn-primary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: #0466c8;
+  /* Azul vibrante */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover,
+.btn-primary:hover {
+  background-color: #0353a4;
+  /* Azul más profundo */
+  transform: scale(1.05);
+  /* Ligero efecto de zoom al pasar el cursor */
+}
+
+/* ==================================================
+   Loader
+================================================== */
+/* Loader Styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #1a1a1a, #000000); /* Gradiente radial */
+  color: white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+  overflow: hidden;
+}
+
+/* Loader Content */
+.loader-content {
+  text-align: center;
+  animation: fadeInUp 1.5s ease-in-out infinite alternate; /* Suavidad en la entrada */
+}
+
+.loader-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Forma circular */
+  border: 5px solid rgba(255, 255, 255, 0.2); /* Anillo translúcido */
+  padding: 10px;
+  animation: spin 2s linear infinite; /* Rotación constante */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3); /* Glow */
+}
+
+.loader-text {
+  color: #00d4ff; /* Azul vibrante */
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif; /* Fuente profesional */
+  margin-top: 15px;
+  letter-spacing: 2px; /* Espaciado entre letras */
+  animation: blink 1s infinite; /* Parpadeo del texto */
+}
+
+/* Animaciones */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hidden State */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Desactiva clics */
+  transition: opacity 0.5s ease;
+}
+
+
+
+/* ==================================================
+   Header
+================================================== */
+header {
+  background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */
+  color: white; /* Texto blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra elegante */
+}
+
+.navbar {
+  background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */
+  padding: 1rem 0; /* Espaciado vertical */
+  transition: all 0.3s ease; /* Suave transición */
+}
+
+.navbar.scrolled {
+  background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */    
+  padding: 0.7rem 0; /* Reducir el tamaño del navbar */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+.navbar-brand img {
+  max-width: 180px; /* Tamaño del logo */
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand img {
+  max-width: 150px; /* Reducir el tamaño del logo al hacer scroll */
+}
+
+/* Estilo de los enlaces */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85); /* Blanco ligeramente translúcido */
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 15px; /* Espaciado interno */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Suave animación */
+  border-radius: 5px; /* Esquinas ligeramente redondeadas */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00b4d8; /* Azul vibrante en hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido en hover */
+}
+
+.navbar-nav .nav-link.active {
+  color: #00b4d8; /* Azul vibrante para el enlace activo */
+  background-color: rgba(255, 255, 255, 0.15); /* Fondo ligeramente destacado */
+}
+
+/* Efecto para el botón de menú en móviles */
+.navbar-toggler {
+  background-color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler {
+  background-color: #ffffff;
+  /* Color blanco */
+  border: none;
+  /* Elimina el borde del botón */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  filter: brightness(0);
+  /* Asegura que el icono se vea blanco */
+}
+
+.navbar-collapse {
+  text-align: center;
+  /* Centra el texto en el colapso del menú */
+}
+
+/* ==================================================
+   Responsividad
+================================================== */
+@media (max-width: 768px) {
+  .navbar-collapse {
+      background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra para móviles */
+  }
+
+  .navbar-nav .nav-link {
+      font-size: 1.2rem;
+      padding: 10px;
+      color: white; /* Texto blanco puro para destacar en móviles */
+  }
+}
+
+
+/* ==================================================
+ Banner Section
+================================================== */
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ==================================================
+     Video Container
+================================================== */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Asegura que el video esté detrás del contenido */
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video ocupe toda el área */
+}
+
+/* ==================================================
+     Overlay
+================================================== */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65); /* Negro translúcido */
+  z-index: 0; /* Capa intermedia */
+}
+
+/* ==================================================
+     Banner Content
+================================================== */
+.banner-content {
+  position: absolute; /* Cambiar de relative a absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrar el contenido */
+  z-index: 1; /* Asegúrate de que el texto esté sobre el video */
+  text-align: center; /* Centrar el texto */
+  color: white; /* Color del texto */
+  max-width: 90%; /* Limitar el ancho máximo */
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff; /* Texto blanco */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* Sombra para visibilidad */
+  margin-bottom: 15px;
+}
+
+.banner-content p {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Sombra ligera */
+  margin-bottom: 20px;
+}
+
+.banner-content .btn {
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  background-color: #32cd32; /* Verde lima */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.banner-content .btn:hover {
+  background-color: #228b22; /* Verde más oscuro en hover */
+  transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+/* ==================================================
+ Stats Section
+================================================== */
+/* General styles for stats */
+#stats {
+  padding: 40px 0;
+  color: var(--white);
+  text-align: center;
+}
+
+#stats h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--bright-blue);
+  margin-bottom: 10px;
+}
+
+#stats p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+#stats .counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  #stats h4 {
+    font-size: 1.5rem;
+  }
+
+  #stats p {
+    font-size: 1rem;
+  }
+
+  #stats .counter {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+/* ==================================================
+   About Me Section
+================================================== */
+#about {
+  padding: 60px 0;
+  /* Espaciado vertical */
+  background-color: var(--light-gray);
+  /* Fondo claro */
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--deep-blue);
+  /* Azul oscuro */
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* Mejor legibilidad */
+  color: var(--gray-blue);
+  /* Azul grisáceo */
+  margin-bottom: 1.5rem;
+}
+
+#about img {
+  border-radius: 10px;
+  /* Esquinas redondeadas */
+  box-shadow: 0px 6px 15px var(--shadow-color);
+  /* Sombra elegante */
+  border: 2px solid var(--border-gray);
+  /* Borde gris azulado */
+  max-width: 100%;
+  /* Imagen responsiva */
+}
+
+/* Botón */
+#about .btn-info {
+  background-color: var(--btn-blue);
+  /* Azul intermedio */
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  /* Transición suave */
+  text-decoration: none;
+  /* Eliminar subrayado */
+  display: inline-block;
+  padding: 10px 20px;
+  /* Espaciado interno */
+}
+
+#about .btn-info:hover {
+  background-color: var(--hover-blue);
+  /* Azul más oscuro en hover */
+  transform: scale(1.05);
+  /* Ligero aumento */
+}
+
+/* Título de Achievements */
+#about h3 {
+  font-size: 2rem; /* Tamaño de fuente mayor */
+  color: #001845; /* Azul profundo */
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  text-align: left; /* Cambiar alineación para mejor lectura */
+}
+
+/* Subrayado decorativo */
+#about h3::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px; /* Más grueso */
+  background-color: #00b4d8; /* Azul vibrante */
+  margin-top: 10px;
+  margin-left: 0; /* Alinear al inicio */
+}
+
+/* Lista de logros */
+#about ul {
+  list-style: none; /* Eliminar viñetas */
+  padding: 0;
+  margin: 1rem 0; /* Espaciado entre título y lista */
+}
+
+#about ul li {
+  font-size: 1.1rem; /* Texto más grande */
+  font-weight: 600;
+  color: #ffffff; /* Texto blanco */
+  background-color: #0466c8; /* Azul brillante */
+  padding: 15px 20px; /* Más espacio interno */
+  margin-bottom: 15px;
+  border-radius: 8px; /* Bordes más redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover en logros */
+#about ul li:hover {
+  background-color: #0353a4; /* Azul más oscuro en hover */
+  transform: translateY(-5px); /* Eleva ligeramente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Íconos decorativos */
+#about ul li::before {
+  content: "🏆"; /* Ícono de trofeo */
+  margin-right: 15px;
+  font-size: 1.4rem;
+  vertical-align: middle; /* Alinear con el texto */
+}
+
+/* Botón */
+#about .btn-info {
+  background-color: #0466c8;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+}
+
+#about .btn-info:hover {
+  background-color: #0353a4; /* Azul más oscuro */
+  transform: scale(1.05); /* Aumenta ligeramente */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más grande */
+}
+
+/* ==================================================
+   Responsividad
+================================================== */
+@media (max-width: 768px) {
+  #about h2 {
+      font-size: 2rem;
+      /* Reducir tamaño del título */
+      text-align: center;
+      /* Centrar el texto */
+      margin-top: 20px;
+      /* Agregar espacio superior */
+  }
+
+  #about p {
+      font-size: 0.95rem;
+      /* Reducir tamaño del texto */
+      text-align: justify;
+      /* Justificar texto */
+  }
+
+  #about .about-text {
+      padding-top: 20px;
+      /* Espacio entre imagen y texto */
+  }
+
+  #about img {
+      max-width: 90%;
+      /* Ajustar tamaño de la imagen */
+      margin: 0 auto;
+      /* Centrar imagen */
+      display: block;
+      /* Asegurar que esté centrada */
+  }
+}
+
+/* ==================================================
+ Packages Section
+================================================== */
+#packages {
+  background: linear-gradient(to bottom, var(--light-gray), var(--darka-blue)); /* Gradiente claro a azul */
+  padding: 3rem 0; /* Espaciado vertical */
+}
+
+#packages h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--black); /* Color destacado sobre el gradiente */
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: none;
+  background-color: var(--white); /* Fondo blanco */
+  box-shadow: 0 4px 8px var(--shadow-light); /* Sombra inicial */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suave transición */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Desplazamiento hacia arriba */
+  box-shadow: 0 8px 16px var(--shadow-dark); /* Sombra más fuerte */
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--darka-blue); /* Azul vibrante */
+}
+
+.card-text ul {
+  padding-left: 20px;
+}
+
+.card-text ul li {
+  font-size: 0.9rem;
+  color: var(--deep-gray); /* Azul grisáceo */
+}
+
+.card-img-top {
+  transition: transform 0.3s ease; /* Transición suave para el zoom o rotación */
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05) rotate(2deg); /* Zoom y ligera rotación */
+}
+
+
+
+
+.btn-primary {
+  background-color: var(--darka-blue); /* Azul principal */
+  border-color: var(--darka-blue); /* Azul principal */
+  color: var(--white);
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Esquinas redondeadas */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:active {
+transform: scale(0.95); /* Efecto de rebote al hacer clic */
+}
+.btn-primary:hover {
+  background-color: var(--hover-blue); /* Azul más profundo en hover */
+  border-color: var(--hover-blue);
+  transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+
+
+
+/* ==================================================
+   Footer
+================================================== */
+footer {
+  background: linear-gradient(180deg, var(--footer-black), var(--footer-gray)); /* Gradiente oscuro */
+  color: var(--white); /* Texto blanco */
+  box-shadow: 0 -4px 8px var(--shadow-dark); /* Sombra superior */
+  padding: 20px 0; /* Espaciado interno */
+}
+
+
+
+/* Redes Sociales y Quick Links */
+footer .d-flex {
+  gap: 30px; /* Espaciado entre columnas */
+}
+
+footer h5 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem; /* Reducir espacio debajo del título */
+}
+
+footer .social-section .d-flex {
+  gap: 15px; /* Espaciado entre íconos */
+}
+
+footer .social-icon i {
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+
+footer .d-flex a {
+  color: var(--white); /* Blanco inicial */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animación suave */
+}
+
+footer .d-flex a:hover {
+  color: var(--hover-orange); /* Naranja vibrante en hover */
+  transform: scale(1.1); /* Agrandamiento al pasar el ratón */
+}
+
+/* Enlaces rápidos */
+.links-section ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Quitar viñetas */
+}
+
+.links-section ul li {
+  margin-bottom: 0.5rem; /* Espaciado entre enlaces */
+}
+
+.links-section a {
+  color: var(--white); /* Blanco */
+  text-decoration: underline; /* Subrayado inicial */
+}
+
+.links-section a:hover {
+  color: var(--hover-orange); /* Naranja vibrante */
+  text-decoration: none; /* Quitar subrayado en hover */
+}
+
+/* Derechos de autor */
+footer .copyright {
+  font-size: 0.85rem; /* Tamaño reducido */
+  color: #bbbbbb; /* Gris claro */
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  opacity: 0.8; /* Transparencia ligera */
+  margin-top: 15px; /* Espaciado superior */
+}
+
+/* ==================================================
+ Efectos de Hover Generales
+================================================== */
+button:hover {
+  background-color: #00b4d8; /* Azul vibrante */
+  transform: scale(1.1);
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Suavidad en cambios */
+}
+
+img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #0077b6; /* Cambia a azul vibrante */
+}
+
+a:visited {
+  color: inherit; /* Evita cambiar de color tras visitar */
+}
+
+/* ==================================================
+ Responsividad
+================================================== */
+@media (max-width: 768px) {
+  .banner-content h1 {
+      font-size: 2rem;
+  }
+
+  .banner-content p {
+      font-size: 1.2rem;
+  }
+
+  .banner-content .btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
+}
