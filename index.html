@@ -54,7 +54,7 @@
 
  <!-- Header -->
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="https://i.ibb.co/9TZNZg2/Logo.png" alt="DaniMambo NYC Logo" style="max-width: 200px;">
@@ -63,13 +63,52 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a href="#banner" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
-          <li class="nav-item"><a href="#packages" class="nav-link">Packages</a></li>
+          <!-- Enlace 1 -->
+          <li class="nav-item">
+            <a href="#banner" class="nav-link" data-lang="en">Home</a>
+            <a href="#banner" class="nav-link" data-lang="es" style="display: none;">Inicio</a>
+          </li>
+          <!-- Enlace 2 -->
+          <li class="nav-item">
+            <a href="#about" class="nav-link" data-lang="en">About Me</a>
+            <a href="#about" class="nav-link" data-lang="es" style="display: none;">Sobre mí</a>
+          </li>
+          <!-- Enlace 3 -->
+          <li class="nav-item">
+            <a href="#packages" class="nav-link" data-lang="en">Packages</a>
+            <a href="#packages" class="nav-link" data-lang="es" style="display: none;">Paquetes</a>
+          </li>
         </ul>
+      
+        <!-- Selector de idioma como submenú -->
+        <div class="dropdown language-switcher">
+          <button data-lang="en" class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            🌐 Language
+          </button>
+          <button data-lang="es" class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            🌐 Idioma
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li>
+              <button class="dropdown-item" id="lang-en">
+                <img src="https://flagcdn.com/w40/us.png" alt="US Flag" class="flag-icon"> English
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" id="lang-es">
+                <img src="https://flagcdn.com/w40/co.png" alt="Colombia Flag" class="flag-icon"> Español
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
+      
+</div>
+
+
     </div>
   </nav>
 </header>
@@ -85,35 +124,58 @@
   </div>
   <div class="video-overlay"></div>
   <div class="banner-content">
-    <h1 id="banner-title">World-Class Salsa Training</h1>
-    <p id="banner-subtitle">Enhance your dancing skills with private salsa lessons tailored for you.</p>
-    <button class="btn" id="banner-btn"><a href="#packages">Get Started</a></button>
+    <h1 data-lang="en" id="banner-title">World-Class Salsa Training</h1>
+    <h1 data-lang="es" style="display: none;">Entrenamiento de Salsa de Clase Mundial</h1>
+  
+    <p data-lang="en" id="banner-subtitle">Enhance your dancing skills with private salsa lessons tailored for you.</p>
+    <p data-lang="es" style="display: none;">Mejora tus habilidades de baile con clases privadas de salsa adaptadas a ti.</p>
+  
+    <!-- Un solo botón -->
+    <button class="btn" id="banner-btn"><a href="#packages" id="btn-text">Get Started!</a></button>
   </div>
 </div>
 
 
+<!--Stats Section-->
 <section id="stats" class="text-center py-5" style="background: linear-gradient(45deg, #023e7d, #0466c8);">
   <div class="container">
     <div class="row">
+      <!-- Columna 1 -->
       <div class="col-md-4">
         <i class="fas fa-running fa-3x mb-3 text-white"></i>
-        <h4 class="text-light">Master Your Dance</h4>
-        <p class="text-white">
+        <h4 class="text-light" data-lang="en">Master Your Dance</h4>
+        <h4 class="text-light" data-lang="es" style="display: none;">Domina Tu Baile</h4>
+        <p class="text-white" data-lang="en">
           Achieve your goals with lessons tailored to <span class="counter" id="counter-dance" data-target="100">0</span>% of your needs.
         </p>
-      </div>
-      <div class="col-md-4">
-        <i class="fas fa-clock fa-3x mb-3 text-white"></i>
-        <h4 class="text-light">Personalized Growth</h4>
-        <p class="text-white">
-          <span class="counter" id="counter-growth" data-target="200">0</span>+ hours of expert-led training to elevate your skills.
+        <p class="text-white" data-lang="es" style="display: none;">
+          Logra tus metas con clases diseñadas para el <span class="counter" id="counter-dance" data-target="100">0</span>% de tus necesidades.
         </p>
       </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-4">
+        <i class="fas fa-clock fa-3x mb-3 text-white"></i>
+        <h4 class="text-light" data-lang="en">Personalized Growth</h4>
+        <h4 class="text-light" data-lang="es" style="display: none;">Crecimiento Personalizado</h4>
+        <p class="text-white" data-lang="en">
+          <span class="counter" id="counter-growth" data-target="200">0</span>+ hours of expert-led training to elevate your skills.
+        </p>
+        <p class="text-white" data-lang="es" style="display: none;">
+          Más de <span class="counter" id="counter-growth" data-target="200">0</span> horas de entrenamiento liderado por expertos para mejorar tus habilidades.
+        </p>
+      </div>
+
+      <!-- Columna 3 -->
       <div class="col-md-4">
         <i class="fas fa-video fa-3x mb-3 text-white"></i>
-        <h4 class="text-light">HD Class Access</h4>
-        <p class="text-white">
+        <h4 class="text-light" data-lang="en">HD Class Access</h4>
+        <h4 class="text-light" data-lang="es" style="display: none;">Acceso a Clases en HD</h4>
+        <p class="text-white" data-lang="en">
           Unlimited replays with <span class="counter" id="counter-hd" data-target="300">0</span> professional video recordings.
+        </p>
+        <p class="text-white" data-lang="es" style="display: none;">
+          Reproducciones ilimitadas con <span class="counter" id="counter-hd" data-target="300">0</span> grabaciones de video profesionales.
         </p>
       </div>
     </div>
@@ -122,155 +184,253 @@
 
 
 
+<!--About me Section-->
 
-  <!-- About Me Section -->
-  <section id="about" class="py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center">
-          <img src="https://i.ibb.co/DCCy3ZP/461428471-122109721832527822-1451229915782545390-n.jpg" alt="Daniel Lozano"
-            class="img-fluid rounded shadow">
+<section id="about" class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Imagen -->
+      <div class="col-md-6 text-center">
+        <img src="https://i.ibb.co/DCCy3ZP/461428471-122109721832527822-1451229915782545390-n.jpg" alt="Daniel Lozano"
+          class="img-fluid rounded shadow">
+      </div>
+      <!-- Contenido con traducción -->
+      <div class="col-md-6">
+        <h2 class="text-primary" data-lang="en">Daniel Mambo NYC</h2>
+        <h2 class="text-primary" data-lang="es" style="display: none;">Daniel Mambo NYC</h2>
+
+        <!-- Primer párrafo -->
+        <p data-lang="en">
+          Meet <strong>Daniel Lozano</strong>, a 20-year-old Colombian salsa dancer whose passion and dedication bring
+          mambo and <em>New York Style (On2)</em> to life. Beginning his dance journey in 2022, Daniel has quickly
+          risen to prominence as a proud member of the prestigious <strong>Empire Mambo</strong>, founded by Adolfo
+          Indacochea in New York City.
+        </p>
+        <p data-lang="es" style="display: none;">
+          Conoce a <strong>Daniel Lozano</strong>, un bailarín de salsa colombiano de 20 años cuya pasión y dedicación
+          dan vida al mambo y al <em>New York Style (On2)</em>. Comenzó su viaje en el baile en 2022, y rápidamente se
+          ha destacado como un orgulloso miembro del prestigioso <strong>Empire Mambo</strong>, fundado por Adolfo
+          Indacochea en Nueva York.
+        </p>
+
+        <!-- Segundo párrafo -->
+        <p data-lang="en">
+          From performing on international stages to training students with personalized guidance, Daniel’s mission is
+          to inspire and empower. His unique teaching style combines <strong>precision, rhythm, and
+            authenticity</strong>, making every class an engaging experience tailored to each student’s needs.
+        </p>
+        <p data-lang="es" style="display: none;">
+          Desde actuar en escenarios internacionales hasta entrenar a estudiantes con orientación personalizada, la
+          misión de Daniel es inspirar y empoderar. Su estilo único de enseñanza combina <strong>precisión, ritmo y
+            autenticidad</strong>, haciendo de cada clase una experiencia atractiva adaptada a las necesidades de cada
+          estudiante.
+        </p>
+
+        <!-- Logros -->
+        <h3 data-lang="en">Achievements</h3>
+        <h3 data-lang="es" style="display: none;">Logros</h3>
+        <ul>
+          <li data-lang="en">🥈 Men Salsa Shines Team - 2nd place</li>
+          <li data-lang="es" style="display: none;">🥈 Equipo de Hombres Salsa Shines - 2º lugar</li>
+          <li data-lang="en">🥉 Pro-Am Men Salsa Team - 3rd place</li>
+          <li data-lang="es" style="display: none;">🥉 Equipo Pro-Am Hombres Salsa - 3º lugar</li>
+        </ul>
+
+        <!-- Botón de "Learn More" -->
+        <a href="#contact" class="btn btn-info text-white px-4 py-2" data-lang="en">Learn More</a>
+        <a href="#contact" class="btn btn-info text-white px-4 py-2" data-lang="es" style="display: none;">Más Información</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Packages Section-->
+<section id="packages" class="py-5" style="background-color: #0077b6;">
+  <div class="container">
+    <!-- Título de la sección -->
+    <h2 class="text-center mb-5 text-black" data-lang="en">Choose Your Package</h2>
+    <h2 class="text-center mb-5 text-black" data-lang="es" style="display: none;">Elige tu Paquete</h2>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="img/2.png" class="card-img-top" alt="Trial Package">
+          <div class="card-body">
+            <!-- Título del paquete -->
+            <h5 class="card-title text-primary" data-lang="en">Trial Package</h5>
+            <h5 class="card-title text-primary" data-lang="es" style="display: none;">Paquete de Prueba</h5>
+            <!-- Descripción -->
+            <p data-lang="en">
+              Price: <strong>$200</strong><br>
+              Sessions: <strong>4</strong> ($50/Session)
+            </p>
+            <p data-lang="es" style="display: none;">
+              Precio: <strong>$200</strong><br>
+              Sesiones: <strong>4</strong> ($50/Sesión)
+            </p>
+            <ul>
+              <li data-lang="en">Basic rhythm, timing, and salsa music.</li>
+              <li data-lang="es" style="display: none;">Ritmo básico, tiempo y música de salsa.</li>
+              <li data-lang="en">Fundamental steps and simple turns.</li>
+              <li data-lang="es" style="display: none;">Pasos fundamentales y giros simples.</li>
+            </ul>
+            <!-- Botón -->
+            <a href="#" class="btn btn-primary text-white book-now" data-lang="en">Book Now</a>
+            <a href="#" class="btn btn-primary text-white book-now" data-lang="es" style="display: none;">Reserva Ahora</a>
+          </div>
         </div>
-        <div class="col-md-6">
-          <h2 class="text-primary">Daniel Mambo NYC</h2>
-          <p>
-            Meet <strong>Daniel Lozano</strong>, a 20-year-old Colombian salsa dancer whose passion and dedication bring
-            mambo and <em>New York Style (On2)</em> to life. Beginning his dance journey in 2022, Daniel has quickly
-            risen to prominence as a proud member of the prestigious <strong>Empire Mambo</strong>, founded by Adolfo
-            Indacochea in New York City.
-          </p>
-          <p>
-            From performing on international stages to training students with personalized guidance, Daniel’s mission is
-            to inspire and empower. His unique teaching style combines <strong>precision, rhythm, and
-              authenticity</strong>, making every class an engaging experience tailored to each student’s needs.
-          </p>
-          <h3>Achievements</h3>
-          <ul>
-            <li>🥈 Men Salsa Shines Team - 2nd place </li>
-            <li>🥉 Pro-Am Men Salsa Team - 3rd place </li>
-          </ul>
-          <a href="#contact" class="btn btn-info text-white px-4 py-2">Learn More</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="img/3.png" class="card-img-top" alt="Standard Package">
+          <div class="card-body">
+            <h5 class="card-title text-primary" data-lang="en">Standard Package</h5>
+            <h5 class="card-title text-primary" data-lang="es" style="display: none;">Paquete Estándar</h5>
+            <p data-lang="en">
+              Price: <strong>$360</strong><br>
+              Classes: <strong>8</strong> ($45/Session)
+            </p>
+            <p data-lang="es" style="display: none;">
+              Precio: <strong>$360</strong><br>
+              Clases: <strong>8</strong> ($45/Sesión)
+            </p>
+            <ul>
+              <li data-lang="en">Refining basic steps and smooth sequences.</li>
+              <li data-lang="es" style="display: none;">Refinando pasos básicos y secuencias fluidas.</li>
+              <li data-lang="en">Posture, connection, and lead-follow techniques.</li>
+              <li data-lang="es" style="display: none;">Postura, conexión y técnicas de guía y seguimiento.</li>
+            </ul>
+            <a href="#" class="btn btn-primary text-white book-now" data-lang="en">Book Now</a>
+            <a href="#" class="btn btn-primary text-white book-now" data-lang="es" style="display: none;">Reserva Ahora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="img/1.png" class="card-img-top" alt="Premium Growth Package">
+          <div class="card-body">
+            <h5 class="card-title text-primary" data-lang="en">Premium Growth Package</h5>
+            <h5 class="card-title text-primary" data-lang="es" style="display: none;">Paquete Premium de Crecimiento</h5>
+            <p data-lang="en">
+              Price: <strong>$500</strong><br>
+              Classes: <strong>10</strong> ($50/Session)
+            </p>
+            <p data-lang="es" style="display: none;">
+              Precio: <strong>$500</strong><br>
+              Clases: <strong>10</strong> ($50/Sesión)
+            </p>
+            <ul>
+              <li data-lang="en">Exploring improvisation and adaptability.</li>
+              <li data-lang="es" style="display: none;">Explorando la improvisación y adaptabilidad.</li>
+              <li data-lang="en">Complex turns and partner dynamics.</li>
+              <li data-lang="es" style="display: none;">Giros complejos y dinámicas de pareja.</li>
+            </ul>
+            <a href="#" class="btn btn-primary text-white book-now" data-lang="en">Book Now</a>
+            <a href="#" class="btn btn-primary text-white book-now" data-lang="es" style="display: none;">Reserva Ahora</a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Packages Section -->
-  <section id="packages" class="py-5" style="background-color: #0077b6;">
-    <div class="container">
-      <h2 class="text-center mb-5 text-black">Choose Your Package</h2>
-      <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-md-4">
-          <div class="card shadow h-100">
-            <img src="img/2.png" class="card-img-top"
-              alt="Absolute Beginner">
-            <div class="card-body">
-              <h5 class="card-title text-primary">Absolute Beginner Package</h5>
-              <p>
-                Price: <strong>$300</strong><br>
-                Classes: <strong>4</strong>
-              </p>
-              <ul>
-                <li>Basic rhythm, timing, and salsa music.</li>
-                <li>Fundamental steps and simple turns.</li>
-              </ul>
-              <a href="#" 
-                class="btn btn-primary text-white book-now" 
-                data-package="Absolute Beginner Package" 
-                data-price="300" 
-                data-classes="4">
-                Book Now</a>
-            </div>
-          </div>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-5" style="background-color: #eef6ff;">
+  <div class="container">
+    <!-- Título de la sección -->
+    <h2 class="text-center mb-4" data-lang="en">Frequently Asked Questions (FAQ)</h2>
+    <h2 class="text-center mb-4" data-lang="es" style="display: none;">Preguntas Frecuentes (FAQ)</h2>
+    <div class="faq-container">
+      <!-- Question 1 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-lang="en">⏳ How long are the classes?</span>
+          <span data-lang="es" style="display: none;">⏳ ¿Cuánto duran las clases?</span>
+          <button class="toggle-btn">+</button>
         </div>
-        <!-- Card 2 -->
-        <div class="col-md-4">
-          <div class="card shadow h-100">
-            <img src="img/3.png" class="card-img-top"
-              alt="Beginner Package">
-            <div class="card-body">
-              <h5 class="card-title text-primary">Beginner Package</h5>
-              <p>
-                Price: <strong>$350</strong><br>
-                Classes: <strong>6</strong>
-              </p>
-              <ul>
-                <li>Refining basic steps and smooth sequences.</li>
-                <li>Posture, connection, and lead-follow techniques.</li>
-              </ul>
-              <a href="#" 
-   class="btn btn-primary text-white book-now" 
-   data-package="Beginner Package" 
-   data-price="350" 
-   data-classes="6">Book Now</a>
-            </div>
-          </div>
+        <div class="faq-answer">
+          <p data-lang="en">Each class lasts 60 minutes, including warm-up and cool-down.</p>
+          <p data-lang="es" style="display: none;">Cada clase dura 60 minutos, incluyendo calentamiento y enfriamiento.</p>
         </div>
-        <!-- Card 3 -->
-        <div class="col-md-4">
-          <div class="card shadow h-100">
-            <img src="img/1.png" class="card-img-top"
-              alt="Advanced Beginner Package">
-            <div class="card-body">
-              <h5 class="card-title text-primary">Advanced Beginner Package</h5>
-              <p>
-                Price: <strong>$400</strong><br>
-                Classes: <strong>7</strong>
-              </p>
-              <ul>
-                <li>Exploring improvisation and adaptability.</li>
-                <li>Complex turns and partner dynamics.</li>
-              </ul>
-              <a href="#" 
-   class="btn btn-primary text-white book-now" 
-   data-package="Advanced Beginner Package" 
-   data-price="400" 
-   data-classes="7">Book Now</a>
-            </div>
-          </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-lang="en">💡 What do I need to bring to the class?</span>
+          <span data-lang="es" style="display: none;">💡 ¿Qué necesito llevar a la clase?</span>
+          <button class="toggle-btn">+</button>
+        </div>
+        <div class="faq-answer">
+          <p data-lang="en">Comfortable clothing, dance shoes, and a water bottle are recommended.</p>
+          <p data-lang="es" style="display: none;">Se recomienda ropa cómoda, zapatos de baile y una botella de agua.</p>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-lang="en">❌ What is your cancellation policy?</span>
+          <span data-lang="es" style="display: none;">❌ ¿Cuál es su política de cancelación?</span>
+          <button class="toggle-btn">+</button>
+        </div>
+        <div class="faq-answer">
+          <p data-lang="en">Please notify us at least 24 hours in advance to reschedule or refund.</p>
+          <p data-lang="es" style="display: none;">Por favor, avísanos con al menos 24 horas de antelación para reprogramar o solicitar un reembolso.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <!-- Footer -->
-  <footer class="text-white py-3" style="background: linear-gradient(180deg, #000000, #1a1a1a);">
-    <div class="container d-flex flex-column align-items-center">
-      <!-- Redes Sociales y Quick Links -->
-      <div class="d-flex justify-content-center align-items-start gap-5">
-        <!-- Redes Sociales -->
-        <div class="social-section text-center">
-          <h5 class="text-white">Follow</h5>
-          <div class="d-flex gap-3 justify-content-center">
-            <a href="https://www.facebook.com/profile.php?id=61565834668865" target="_blank" class="text-white social-icon">
-              <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="https://www.instagram.com/daniellzn1/" target="_blank" class="text-white social-icon">
-              <i class="fab fa-instagram fa-2x"></i>
-            </a>            
-          </div>
+
+
+
+<!-- Footer -->
+<footer class="text-white py-3" style="background: linear-gradient(180deg, #000000, #1a1a1a);">
+  <div class="container d-flex flex-column align-items-center">
+    <!-- Redes Sociales y Quick Links -->
+    <div class="d-flex justify-content-center align-items-start gap-5">
+      <!-- Redes Sociales -->
+      <div class="social-section text-center">
+        <h5 class="text-white" data-lang="en">Follow</h5>
+        <h5 class="text-white" data-lang="es" style="display: none;">Síguenos</h5>
+        <div class="d-flex gap-3 justify-content-center">
+          <a href="https://www.facebook.com/profile.php?id=61565834668865" target="_blank" class="text-white social-icon">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="https://www.instagram.com/daniellzn1/" target="_blank" class="text-white social-icon">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>            
         </div>
-
-        <!-- Quick Links -->
-        <div class="links-section text-center">
-          <h5 class="text-white">Quick Links</h5>
-          <ul class="list-unstyled mb-0">
-            <li><a href="#banner" class="text-white text-decoration-underline">Home</a></li>
-            <li><a href="#about" class="text-white text-decoration-underline">About Me</a></li>
-            <li><a href="#packages" class="text-white text-decoration-underline">Packages</a></li>
-          </ul>
-        </div>  
       </div>
 
-      <!-- Derechos de Autor -->
-      <div class="text-center mt-3">
-        <p class="copyright mb-0">&copy; 2024 DaniMambo NYC. All rights reserved.</p>
-      </div>
+      <!-- Quick Links -->
+      <div class="links-section text-center">
+        <h5 class="text-white" data-lang="en">Quick Links</h5>
+        <h5 class="text-white" data-lang="es" style="display: none;">Enlaces Rápidos</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#banner" class="text-white text-decoration-underline" data-lang="en">Home</a><a href="#banner" class="text-white text-decoration-underline" data-lang="es" style="display: none;">Inicio</a></li>
+          <li><a href="#about" class="text-white text-decoration-underline" data-lang="en">About Me</a><a href="#about" class="text-white text-decoration-underline" data-lang="es" style="display: none;">Sobre mí</a></li>
+          <li><a href="#packages" class="text-white text-decoration-underline" data-lang="en">Packages</a><a href="#packages" class="text-white text-decoration-underline" data-lang="es" style="display: none;">Paquetes</a></li>
+        </ul>
+      </div>  
     </div>
-  </footer>
 
+    <!-- Derechos de Autor -->
+    <div class="text-center mt-3">
+      <p class="copyright mb-0" data-lang="en">&copy; 2024 DaniMambo NYC. All rights reserved.</p>
+      <p class="copyright mb-0" data-lang="es" style="display: none;">&copy; 2024 DaniMambo NYC. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
   
 </body>
 

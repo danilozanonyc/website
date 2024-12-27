@@ -25,6 +25,7 @@
   --darka-blue: #0466c8;
 }
 
+
 /* ==================================================
  General Reset
 ================================================== */
@@ -198,54 +199,66 @@ button:hover,
    Header
 ================================================== */
 header {
-  background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */
-  color: white; /* Texto blanco */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra elegante */
+  background: linear-gradient(135deg, #243b55, #141e30);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .navbar {
-  background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */
-  padding: 1rem 0; /* Espaciado vertical */
-  transition: all 0.3s ease; /* Suave transición */
+  background: linear-gradient(135deg, #243b55, #141e30);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
-  background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */    
-  padding: 0.7rem 0; /* Reducir el tamaño del navbar */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+  padding: 0.7rem 0;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
 }
 
 .navbar-brand img {
-  max-width: 180px; /* Tamaño del logo */
+  max-width: 180px;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled .navbar-brand img {
-  max-width: 150px; /* Reducir el tamaño del logo al hacer scroll */
+  max-width: 150px;
 }
 
-/* Estilo de los enlaces */
+/* Enlaces del menú */
+.navbar-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+
 .navbar-nav .nav-link {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85); /* Blanco ligeramente translúcido */
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
   font-weight: bold;
-  padding: 8px 15px; /* Espaciado interno */
-  transition: color 0.3s ease, background-color 0.3s ease; /* Suave animación */
-  border-radius: 5px; /* Esquinas ligeramente redondeadas */
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #00b4d8; /* Azul vibrante en hover */
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido en hover */
+  color: #00b4d8;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar-nav .nav-link.active {
-  color: #00b4d8; /* Azul vibrante para el enlace activo */
-  background-color: rgba(255, 255, 255, 0.15); /* Fondo ligeramente destacado */
+  color: #00b4d8;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Efecto para el botón de menú en móviles */
+/* Botón de menú en móviles */
 .navbar-toggler {
   background-color: white;
   border: none;
@@ -258,38 +271,89 @@ header {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.navbar-toggler {
-  background-color: #ffffff;
-  /* Color blanco */
-  border: none;
-  /* Elimina el borde del botón */
-}
-
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   filter: brightness(0);
-  /* Asegura que el icono se vea blanco */
 }
 
 .navbar-collapse {
   text-align: center;
-  /* Centra el texto en el colapso del menú */
+}
+
+/* Selector de idioma */
+.language-switcher {
+  margin-left: 15px;
+}
+
+.language-switcher .btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.language-switcher .btn:hover {
+  background-color: #0056b3;
+}
+
+.language-switcher .dropdown-menu {
+  min-width: 150px;
+  border-radius: 5px;
+}
+
+.language-switcher .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: auto;
 }
 
 /* ==================================================
    Responsividad
 ================================================== */
+/* Estilo del menú desplegable en móvil */
 @media (max-width: 768px) {
   .navbar-collapse {
-      background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico en móviles */
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra para móviles */
+    background: linear-gradient(135deg, #243b55, #141e30); /* Fondo dinámico para el menú */
+    padding: 15px; /* Espaciado interno para mayor claridad */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar el menú */
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    gap: 15px; /* Espaciado entre elementos del menú */
+    text-align: center; /* Centrar el texto */
   }
 
   .navbar-nav .nav-link {
-      font-size: 1.2rem;
-      padding: 10px;
-      color: white; /* Texto blanco puro para destacar en móviles */
+    font-size: 1.2rem; /* Texto más grande para móviles */
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #00b4d8;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido al pasar el cursor */
+  }
+
+  .language-switcher {
+    margin-top: 15px; /* Separar el selector de idioma del resto del menú */
+    text-align: center; /* Centrar el selector */
+  }
+
+  .language-switcher .btn {
+    width: 100%; /* Botón de idioma a ancho completo en móvil */
+    font-size: 1rem; /* Tamaño de texto más grande */
   }
 }
 
@@ -383,6 +447,55 @@ header {
 }
 
 /* ==================================================
+     Banner Content - Mobile Optimization
+================================================== */
+@media (max-width: 768px) {
+  .banner-content {
+    top: 45%; /* Ajustar la posición para centrar mejor el contenido */
+    transform: translate(-50%, -45%); /* Corrección adicional para centrar */
+    max-width: 80%; /* Limitar el ancho del texto en pantallas pequeñas */
+    padding: 0 10px; /* Espaciado interno para evitar bordes cortados */
+  }
+
+  .banner-content h1 {
+    font-size: 5rem; /* Tamaño de texto más pequeño para móviles */
+    line-height: 1.2; /* Reducir el espacio entre líneas */
+    margin-bottom: 10px;
+  }
+
+  .banner-content p {
+    font-size: 2rem; /* Tamaño del texto descriptivo reducido */
+    line-height: 1.4; /* Mejora de la legibilidad */
+    margin-bottom: 15px;
+  }
+
+  .banner-content .btn {
+    font-size: 2rem; /* Botón ligeramente más pequeño */
+    padding: 10px 20px; /* Reducir el tamaño del botón */
+    width: 100%; /* Botón de ancho completo en móviles */
+    max-width: 300px; /* Limitar el ancho máximo del botón */
+    margin: 0 auto; /* Centrar el botón */
+  }
+}
+
+/* Corrección para pantallas aún más pequeñas (por ejemplo, teléfonos antiguos) */
+@media (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+
+  .banner-content .btn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+
+
+/* ==================================================
  Stats Section
 ================================================== */
 /* General styles for stats */
@@ -405,7 +518,7 @@ header {
 }
 
 #stats .counter {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   align-items: center;
@@ -682,6 +795,93 @@ transform: scale(0.95); /* Efecto de rebote al hacer clic */
 }
 
 
+/* ==================================================
+    FAQ Section Styling 
+================================================== */
+
+/* FAQ Section Styling */
+#faq {
+  background-color: #eef6ff; /* Color diferenciado */
+  padding: 60px 20px; /* Espaciado amplio */
+}
+
+#faq h2 {
+  color: #0077b6; /* Azul consistente con los paquetes */
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0077b6;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn.open {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0; /* Altura inicial cerrada */
+  overflow: hidden; /* Oculta el contenido que exceda la altura */
+  transition: max-height 0.4s ease, padding-top 0.1s ease; /* Transición suave para altura y espaciado */
+  padding-top: 0; /* Sin espacio inicial */
+  color: #555;
+  font-size: 0.95rem;
+  padding-top: 10px;
+}
+
+.faq-answer.open {
+  max-height: 300px; /* Ajusta esto según la longitud máxima de tus respuestas */
+  padding-top: 10px; /* Espacio visible al abrir */
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.faq-answer {
+  padding-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+
+.toggle-btn.open {
+  transform: rotate(45deg);
+}
 
 
 /* ==================================================
@@ -804,4 +1004,18 @@ a:visited {
       font-size: 1rem;
       padding: 10px 20px;
   }
+}
+
+
+/* Ocultar visualmente la barra pero permitir el desplazamiento */
+html {
+  scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+body {
+  overflow-y: scroll; /* Mantiene la funcionalidad del scroll */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Oculta la barra en navegadores basados en WebKit (Chrome, Safari, Edge) */
 }

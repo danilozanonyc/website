@@ -51,8 +51,63 @@
     
       sections.forEach((section) => observer.observe(section));
     });
-    
   
+
+
+
+// Selección de botones y contenido
+const langElements = document.querySelectorAll('[data-lang]');
+const langButtons = document.querySelectorAll('.dropdown-item');
+
+// Función para cambiar el idioma
+function switchLanguage(language) {
+  langElements.forEach((element) => {
+    if (element.getAttribute('data-lang') === language) {
+      element.style.display = 'block';
+    } else {
+      element.style.display = 'none';
+    }
+  });
+}
+
+// Asignar eventos a los botones del submenú
+langButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const language = button.id.split('-')[1]; // Extrae "en" o "es" del id
+    switchLanguage(language);
+  });
+});
+
+// Idioma predeterminado
+switchLanguage('en');
+
+// Función para cambiar idioma
+function switchLanguage(language) {
+  // Cambiar texto del botón
+  const buttonText = document.getElementById('btn-text');
+  if (language === 'en') {
+    buttonText.textContent = 'Get Started!';
+  } else if (language === 'es') {
+    buttonText.textContent = '¡Empieza ahora!';
+  }
+
+  // Mostrar/ocultar texto según idioma
+  document.querySelectorAll('[data-lang]').forEach((element) => {
+    if (element.getAttribute('data-lang') === language) {
+      element.style.display = 'block';
+    } else {
+      element.style.display = 'none';
+    }
+  });
+}
+
+// Idioma predeterminado
+switchLanguage('en');
+
+// Asignar evento a los botones de idioma
+document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+document.getElementById('lang-es').addEventListener('click', () => switchLanguage('es'));
+
   
   /* ==================================================
        ANIMACIONES AL CARGAR
@@ -307,7 +362,33 @@
     });
   });
   
+    /* ==================================================
+  FAQ
+    ================================================== */
   
+    document.querySelectorAll(".faq-question").forEach((item) => {
+      item.addEventListener("click", () => {
+        const answer = item.nextElementSibling;
+        const button = item.querySelector(".toggle-btn");
+    
+        // Verificar si la respuesta ya está abierta
+        if (answer.classList.contains("open")) {
+          answer.classList.remove("open"); // Cierra la respuesta
+          button.textContent = "+"; // Cambia el botón a '+'
+        } else {
+          // Cierra cualquier otra respuesta abierta
+          document.querySelectorAll(".faq-answer.open").forEach((openAnswer) => {
+            openAnswer.classList.remove("open");
+            openAnswer.previousElementSibling.querySelector(".toggle-btn").textContent = "+";
+          });
+    
+          // Abre la respuesta actual
+          answer.classList.add("open");
+          button.textContent = "-"; // Cambia el botón a '-'
+        }
+      });
+    });
+    
   
   /* ==================================================
     MOVIMIENTO SMOOTH
