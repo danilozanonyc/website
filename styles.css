@@ -25,6 +25,77 @@
   --darka-blue: #0466c8;
 }
 
+/* ==================================================
+  Fonts
+================================================== */
+
+/* Bebas Neue */
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/fonts/Bebas_Neue/BebasNeue-Regular.woff2') format('woff2'),
+       url('/fonts/Bebas_Neue/BebasNeue-Regular.woff') format('woff'),
+       url('/fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Lato */
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato/Lato-Regular.woff2') format('woff2'),
+       url('/fonts/Lato/Lato-Regular.woff') format('woff'),
+       url('/fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato/Lato-Bold.woff2') format('woff2'),
+       url('/fonts/Lato/Lato-Bold.woff') format('woff'),
+       url('/fonts/Lato/Lato-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+/* Montserrat */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
+       url('/fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+       url('/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
+       url('/fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
+       url('/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+/* Raleway */
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway/Raleway-Regular.woff2') format('woff2'),
+       url('/fonts/Raleway/Raleway-Regular.woff') format('woff'),
+       url('/fonts/Raleway/Raleway-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway/static/Raleway-Bold.ttf') format('woff2'),
+       url('/fonts/Raleway/static/Raleway-Bold.woff') format('woff'),
+       url('/fonts/Raleway/static/Raleway-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
 
 /* ==================================================
  General Reset
