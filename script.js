@@ -1,23 +1,4 @@
-/* ==================================================
-     LOADING
-  ================================================== */
-  document.addEventListener("DOMContentLoaded", () => {
-    const loader = document.getElementById("loader");
-    const startTime = Date.now();
-  
-    window.addEventListener("load", () => {
-      const loadTime = Date.now() - startTime;
-  
-      // Muestra el loader solo si la carga toma más de 500 ms
-      if (loadTime > 500) {
-        loader.classList.add("hidden");
-      } else {
-        loader.classList.add("instant-hide");
-      }
-    });
-  });
-  
-  
+ 
   /* ==================================================
        HEADER
     ================================================== */
