@@ -10,6 +10,8 @@
   <!-- Título optimizado -->
   <title>Clases Privadas de Salsa en NYC | Aprende con Daniel Lozano</title>
     
+  <link rel="preload" href="path/to/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
   <!-- Meta descripción optimizada -->
   <meta name="description" content="Mejora tus habilidades de baile con clases privadas de salsa en Nueva York impartidas por Daniel Lozano. Programas personalizados para todos los niveles.">
   
@@ -17,7 +19,7 @@
   <meta name="keywords" content="clases de salsa en NYC, clases privadas de salsa, lecciones de baile en Nueva York, aprende salsa con Daniel Lozano, salsa para principiantes en NYC, instructor de salsa NYC, salsa avanzada en NYC">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -161,8 +163,8 @@
 <!-- Banner Section -->
 <div id="banner" class="banner-section">
   <div class="video-container">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="img/banner.mp4" type="video/mp4" alt="Banner video" />
+    <video autoplay muted loop playsinline class="background-video" >
+      <source src="img/banner.mp4" type="video/mp4" alt="Banner video" loading="lazy" />
       Your browser does not support the video tag.
     </video>
   </div>
@@ -236,7 +238,8 @@
       <!-- Imagen -->
       <div class="col-md-6 text-center">
         <img src="img/aboutme.webp" alt="Daniel Lozano"
-          class="img-fluid rounded shadow">
+          class="img-fluid rounded shadow"
+          loading="lazy">
       </div>
       <!-- Contenido con traducción -->
       <div class="col-md-6">
@@ -281,104 +284,177 @@
         </ul>
 
         <!-- Botón de "Learn More" -->
-        <a href="#contact" class="btn btn-info text-white px-4 py-2" data-lang="en">Learn More</a>
-        <a href="#contact" class="btn btn-info text-white px-4 py-2" data-lang="es" style="display: none;">Más Información</a>
+        <a href="https://www.instagram.com/daniellzn1/" class="btn btn-info text-white px-4 py-2" data-lang="en">Learn More</a>
+        <a href="https://www.instagram.com/daniellzn1/" class="btn btn-info text-white px-4 py-2" data-lang="es" style="display: none;">Más Información</a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!--Packages Section-->
-<section id="packages" class="py-5" style="background-color: #0077b6;">
+
+
+<section id="packages" class="py-5" style="background: linear-gradient(to bottom, #f8f9fa, #0077b6);">
   <div class="container">
-    <!-- Título de la sección -->
     <h2 class="text-center mb-5 text-black" data-lang="en">Choose Your Package</h2>
     <h2 class="text-center mb-5 text-black" data-lang="es" style="display: none;">Elige tu Paquete</h2>
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="img/2.avif" class="card-img-top" alt="Trial Package">
-          <div class="card-body">
-            <!-- Título del paquete -->
-            <h5 class="card-title text-primary" data-lang="en">Trial Package</h5>
-            <h5 class="card-title text-primary" data-lang="es" style="display: none;">Paquete de Prueba</h5>
-            <!-- Descripción -->
-            <p data-lang="en">
-              Price: <strong>$200</strong><br>
-              Sessions: <strong>4</strong> ($50/Session)
-            </p>
-            <p data-lang="es" style="display: none;">
-              Precio: <strong>$200</strong><br>
-              Sesiones: <strong>4</strong> ($50/Sesión)
-            </p>
-            <ul>
-              <li data-lang="en">Basic rhythm, timing, and salsa music.</li>
-              <li data-lang="es" style="display: none;">Ritmo básico, tiempo y música de salsa.</li>
-              <li data-lang="en">Fundamental steps and simple turns.</li>
-              <li data-lang="es" style="display: none;">Pasos fundamentales y giros simples.</li>
-            </ul>
-            <!-- Botón -->
-            <a href="#" class="btn btn-primary text-white book-now" data-lang="en">Book Now</a>
-            <a href="#" class="btn btn-primary text-white book-now" data-lang="es" style="display: none;">Reserva Ahora</a>
-          </div>
-        </div>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card Trial Package -->
+<div class="col-md-4 d-flex align-items-stretch">
+  <div class="card shadow h-100">
+    <img src="img/trial_package.webp" loading="lazy" class="card-img-top" alt="Trial Package">
+    <div class="card-body">
+      <!-- Título -->
+      <h5 class="card-title text-primary mb-3 text-center" data-lang="en">Trial Package</h5>
+      <h5 class="card-title text-primary mb-3 text-center" data-lang="es" style="display: none;">Paquete de Prueba</h5>
+
+      <!-- Precio -->
+      <p class="text-center" data-lang="en"><strong>$200</strong> for 4 sessions ($50/session)</p>
+      <p class="text-center" data-lang="es" style="display: none;"><strong>$200</strong> por 4 sesiones ($50/sesión)</p>
+
+      <!-- Pestañas -->
+      <div class="tabs">
+        <button class="tab-link active" data-tab="features" data-lang="en">Features</button>
+        <button class="tab-link active" data-tab="features" data-lang="es" style="display: none;">Características</button>
+        <button class="tab-link" data-tab="why-choose" data-lang="en">Why Choose This Package?</button>
+        <button class="tab-link" data-tab="why-choose" data-lang="es" style="display: none;">¿Por qué elegir este paquete?</button>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="img/3.avif" class="card-img-top" alt="Standard Package">
-          <div class="card-body">
-            <h5 class="card-title text-primary" data-lang="en">Standard Package</h5>
-            <h5 class="card-title text-primary" data-lang="es" style="display: none;">Paquete Estándar</h5>
-            <p data-lang="en">
-              Price: <strong>$360</strong><br>
-              Classes: <strong>8</strong> ($45/Session)
-            </p>
-            <p data-lang="es" style="display: none;">
-              Precio: <strong>$360</strong><br>
-              Clases: <strong>8</strong> ($45/Sesión)
-            </p>
-            <ul>
-              <li data-lang="en">Refining basic steps and smooth sequences.</li>
-              <li data-lang="es" style="display: none;">Refinando pasos básicos y secuencias fluidas.</li>
-              <li data-lang="en">Posture, connection, and lead-follow techniques.</li>
-              <li data-lang="es" style="display: none;">Postura, conexión y técnicas de guía y seguimiento.</li>
-            </ul>
-            <a href="#" class="btn btn-primary text-white book-now" data-lang="en">Book Now</a>
-            <a href="#" class="btn btn-primary text-white book-now" data-lang="es" style="display: none;">Reserva Ahora</a>
-          </div>
-        </div>
+      <!-- Contenido de las pestañas -->
+      <div id="features" class="tab-content active">
+        <ul>
+          <li data-lang="en">• Learn <strong>timing, footwork, and connection</strong> with personalized guidance.</li>
+          <li data-lang="en">• Gain the <strong>confidence to dance with ease</strong> and enjoy every step.</li>
+          <li data-lang="en">• A no-pressure way to explore salsa without a big commitment.</li>
+
+          <li data-lang="es" style="display: none;">• Aprende <strong>ritmo, pasos y conexión</strong> con guía personalizada.</li>
+          <li data-lang="es" style="display: none;">• Gana la <strong>confianza para bailar con facilidad</strong> y disfruta cada paso.</li>
+          <li data-lang="es" style="display: none;">• Una forma sin presión de explorar salsa sin un gran compromiso.</li>
+        </ul>
+      </div>
+      <div id="why-choose" class="tab-content">
+        <ul>
+          <li data-lang="en">• Perfect for beginners starting their salsa journey.</li>
+          <li data-lang="en">• Learn at your pace while having fun.</li>
+
+          <li data-lang="es" style="display: none;">• Perfecto para principiantes que comienzan su viaje de salsa.</li>
+          <li data-lang="es" style="display: none;">• Aprende a tu ritmo mientras te diviertes.</li>
+        </ul>
       </div>
 
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="img/1.avif" class="card-img-top" alt="Premium Growth Package">
-          <div class="card-body">
-            <h5 class="card-title text-primary" data-lang="en">Premium Growth Package</h5>
-            <h5 class="card-title text-primary" data-lang="es" style="display: none;">Paquete Premium de Crecimiento</h5>
-            <p data-lang="en">
-              Price: <strong>$500</strong><br>
-              Classes: <strong>10</strong> ($50/Session)
-            </p>
-            <p data-lang="es" style="display: none;">
-              Precio: <strong>$500</strong><br>
-              Clases: <strong>10</strong> ($50/Sesión)
-            </p>
-            <ul>
-              <li data-lang="en">Exploring improvisation and adaptability.</li>
-              <li data-lang="es" style="display: none;">Explorando la improvisación y adaptabilidad.</li>
-              <li data-lang="en">Complex turns and partner dynamics.</li>
-              <li data-lang="es" style="display: none;">Giros complejos y dinámicas de pareja.</li>
-            </ul>
-            <a href="#" class="btn btn-primary text-white book-now" data-lang="en">Book Now</a>
-            <a href="#" class="btn btn-primary text-white book-now" data-lang="es" style="display: none;">Reserva Ahora</a>
+      <!-- Botón -->
+      <a href="#" class="btn btn-primary text-white book-now mt-3 d-block mx-auto"
+        data-package="Trial Package"
+        data-price="200"
+        data-classes="4 sessions">
+        <span data-lang="en">Book Now!</span>
+        <span data-lang="es" style="display: none;">¡Reserva Ahora!</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+     <!-- Card Standard Package -->
+     <div class="col-md-4 d-flex align-items-stretch">
+      <div class="card shadow-lg h-100 border-primary popular-card" style="border-width: 3px;">
+        <div data-lang="en" class="ribbon">Most popular</div>
+        <div data-lang="es" class="ribbon">Más popular</div>
+        <img src="img/standard_package.webp" loading="lazy" class="card-img-top" alt="Standard Package">
+        <div class="card-body">
+          <h5 class="card-title text-primary mb-3 text-center" data-lang="en">Standard Package</h5>
+          <h5 class="card-title text-primary mb-3 text-center" data-lang="es" style="display: none;">Paquete Estándar</h5>
+          <p class="text-center" data-lang="en"><strong>$360</strong> for 8 sessions ($45/session)</p>
+          <p class="text-center" data-lang="es" style="display: none;"><strong>$360</strong> por 8 sesiones ($45/sesión)</p>
+          <div class="tabs">
+            <button class="tab-link active" data-tab="features-standard" data-lang="en">Features</button>
+            <button class="tab-link" data-tab="features-standard" data-lang="es" style="display: none;">Características</button>
+            <button class="tab-link" data-tab="why-choose-standard" data-lang="en">Why Choose This Package?</button>
+            <button class="tab-link" data-tab="why-choose-standard" data-lang="es" style="display: none;">¿Por qué elegir este paquete?</button>
           </div>
+          <div id="features-standard" class="tab-content active">
+            <ul>
+              <li data-lang="en">• Focus on technique and musicality for smooth, confident movements.</li>
+              <li data-lang="en">• Build natural flow and precision to shine in partner work.</li>
+              <li data-lang="en">• Feel polished and ready for social dances or special events.</li>
+              <li data-lang="es" style="display: none;">• Concéntrate en la técnica y musicalidad para movimientos fluidos y seguros.</li>
+              <li data-lang="es" style="display: none;">• Desarrolla fluidez y precisión para destacar en baile en pareja.</li>
+              <li data-lang="es" style="display: none;">• Siéntete listo para eventos sociales o especiales.</li>
+            </ul>
+          </div>
+          <div id="why-choose-standard" class="tab-content">
+            <ul>
+              <li data-lang="en">• Ideal for those ready to make a big commitment to growth.</li>
+              <li data-lang="en">• Offers the perfect balance of time and visible results.</li>
+              <li data-lang="es" style="display: none;">• Ideal para aquellos listos para comprometerse con el crecimiento.</li>
+              <li data-lang="es" style="display: none;">• Ofrece el equilibrio perfecto entre tiempo y resultados visibles.</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-primary text-white book-now mt-3 d-block mx-auto"
+            data-package="Standard Package"
+            data-price="360"
+            data-classes="8 sessions">
+            <span data-lang="en">Book Now</span>
+            <span data-lang="es" style="display: none;">Reserva Ahora</span>
+          </a>
         </div>
       </div>
+    </div>
+    
+
+
+   <!-- Card Premium Growth Package -->
+<div class="col-md-4 d-flex align-items-stretch">
+  <div class="card shadow h-100">
+    <img src="img/premium_package.webp" loading="lazy" class="card-img-top" alt="Premium Growth Package">
+    <div class="card-body">
+      <h5 class="card-title text-primary mb-3 text-center" data-lang="en">Premium Growth Package</h5>
+      <h5 class="card-title text-primary mb-3 text-center" data-lang="es" style="display: none;">Paquete Premium de Crecimiento</h5>
+
+      <p class="text-center" data-lang="en"><strong>$500</strong> for 10 sessions ($50/session + 1 bonus session)</p>
+      <p class="text-center" data-lang="es" style="display: none;"><strong>$500</strong> por 10 sesiones ($50/sesión + 1 sesión extra)</p>
+
+      <div class="tabs">
+        <button class="tab-link active" data-tab="features-premium" data-lang="en">Features</button>
+        <button class="tab-link" data-tab="features-premium" data-lang="es" style="display: none;">Características</button>
+        <button class="tab-link" data-tab="why-choose-premium" data-lang="en">Why Choose This Package?</button>
+        <button class="tab-link" data-tab="why-choose-premium" data-lang="es" style="display: none;">¿Por qué elegir este paquete?</button>
+      </div>
+
+      <div id="features-premium" class="tab-content active">
+        <ul>
+          <li data-lang="en">• Refine advanced techniques and elevate your style.</li>
+          <li data-lang="en">• Use your bonus session your way—extra practice, perfecting moves, or diving deeper.</li>
+          <li data-lang="en">• Feel unstoppable and stand out at any event or performance.</li>
+
+          <li data-lang="es" style="display: none;">• Refina técnicas avanzadas y eleva tu estilo.</li>
+          <li data-lang="es" style="display: none;">• Usa tu sesión adicional como prefieras: práctica extra, perfeccionamiento o inmersión.</li>
+          <li data-lang="es" style="display: none;">• Destácate en cualquier evento o actuación.</li>
+        </ul>
+      </div>
+
+      <div id="why-choose-premium" class="tab-content">
+        <ul>
+          <li data-lang="en">• For dancers serious about achieving mastery.</li>
+          <li data-lang="en">• Gain the most time and focus for real transformation.</li>
+
+          <li data-lang="es" style="display: none;">• Para bailarines comprometidos con alcanzar la maestría.</li>
+          <li data-lang="es" style="display: none;">• Obtén el mayor tiempo y enfoque para una verdadera transformación.</li>
+        </ul>
+      </div>
+
+      <a href="#" class="btn btn-primary text-white book-now mt-3 d-block mx-auto"
+        data-package="Premium Growth Package"
+        data-price="500"
+        data-classes="10 sessions">
+        <span data-lang="en">Book Now!</span>
+        <span data-lang="es" style="display: none;">¡Reserva Ahora!</span>
+      </a>
+    </div>
+  </div>
+</div>
+
     </div>
   </div>
 </section>

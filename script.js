@@ -1,17 +1,22 @@
 /* ==================================================
      LOADING
   ================================================== */
-
   document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById("loader");
+    const startTime = Date.now();
   
-    // Oculta el loader después de que la página esté completamente cargada
     window.addEventListener("load", () => {
-      setTimeout(() => {
+      const loadTime = Date.now() - startTime;
+  
+      // Muestra el loader solo si la carga toma más de 500 ms
+      if (loadTime > 500) {
         loader.classList.add("hidden");
-      }, 1500); // Agrega un retraso para que la transición sea visible
+      } else {
+        loader.classList.add("instant-hide");
+      }
     });
   });
+  
   
   /* ==================================================
        HEADER
@@ -361,7 +366,92 @@ document.getElementById('lang-es').addEventListener('click', () => switchLanguag
       });
     });
   });
+
+  /* ==================================================
+       BOOK NOW
+    ================================================== */
   
+// Selecciona todos los botones "Book Now"
+const bookNowButtons = document.querySelectorAll(".book-now");
+
+// Hover Animation
+bookNowButtons.forEach((button) => {
+  button.addEventListener("mouseenter", () => {
+    gsap.to(button, { duration: 0.3, scale: 1.1, backgroundColor: "#0466c8" });
+  });
+
+  button.addEventListener("mouseleave", () => {
+    gsap.to(button, { duration: 0.3, scale: 1, backgroundColor: "#0466c8" });
+  });
+
+  // Bounce Animation
+  gsap.to(button, {
+    duration: 1.2,
+    y: -15,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut",
+  });
+});
+
+
+/*TABS*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Selecciona todas las tarjetas con tabs
+  const packageCards = document.querySelectorAll(".card");
+
+  packageCards.forEach((card) => {
+    // Encuentra todos los botones de tabs dentro de la tarjeta actual
+    const tabs = card.querySelectorAll(".tab-link");
+    const contents = card.querySelectorAll(".tab-content");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Elimina la clase 'active' de todos los tabs y contenidos dentro de la misma tarjeta
+        tabs.forEach((t) => t.classList.remove("active"));
+        contents.forEach((content) => content.classList.remove("active"));
+
+        // Activa el tab y el contenido correspondiente
+        tab.classList.add("active");
+        const targetContent = card.querySelector(`#${tab.dataset.tab}`);
+        if (targetContent) {
+          targetContent.classList.add("active");
+        }
+      });
+    });
+  });
+});
+
+
+// Controla las pestañas individualmente para cada tarjeta
+document.querySelectorAll(".tabs").forEach((tabContainer) => {
+  const tabLinks = tabContainer.querySelectorAll(".tab-link");
+  tabLinks.forEach((tabLink) => {
+    tabLink.addEventListener("click", () => {
+      const tabContentId = tabLink.dataset.tab;
+
+      // Desactiva todas las pestañas en el contenedor
+      tabLinks.forEach((link) => link.classList.remove("active"));
+      tabContainer
+        .closest(".card")
+        .querySelectorAll(".tab-content")
+        .forEach((content) => content.classList.remove("active"));
+
+      // Activa la pestaña seleccionada
+      tabLink.classList.add("active");
+      tabContainer
+        .closest(".card")
+        .querySelector(`#${tabContentId}`)
+        .classList.add("active");
+    });
+  });
+});
+
+
+
+
+
     /* ==================================================
   FAQ
     ================================================== */

@@ -206,6 +206,8 @@ button:hover,
   padding: 10px;
   animation: spin 2s linear infinite; /* Rotación constante */
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3); /* Glow */
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.8); /* Transparencia */
 }
 
 .loader-text {
@@ -262,6 +264,10 @@ button:hover,
   visibility: hidden;
   pointer-events: none; /* Desactiva clics */
   transition: opacity 0.5s ease;
+}
+
+.instant-hide {
+  display: none !important;
 }
 
 
@@ -800,31 +806,54 @@ header {
   padding: 3rem 0; /* Espaciado vertical */
 }
 
+
 #packages h2 {
-  font-size: 3rem;
+  font-size: 3.2rem; /* Ligeramente más grande */
   font-weight: 700;
   color: var(--black); /* Color destacado sobre el gradiente */
   text-decoration: underline;
   text-align: center;
   margin-bottom: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+
+}
+
+.card p{
+  font-size: 1.4rem;
 }
 
 .card {
+  position: relative; /* Asegura que todo se alinee dentro de la tarjeta */
   border: none;
   background-color: var(--white); /* Fondo blanco */
   box-shadow: 0 4px 8px var(--shadow-light); /* Sombra inicial */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suave transición */
+  transition: box-shadow 0.3s ease; /* Suave transición de sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para suavizar el efecto */
+  min-height: 600px; /* Asegura altura uniforme */
+  display: flex; /* Flexbox para organizar contenido */
+  flex-direction: column; /* Alinea elementos en columna */
+  justify-content: space-between; /* Espacio entre contenido y botón */
+}
+
+
+.card-body {
+  display: flex;
+  flex-direction: column; /* Organiza contenido verticalmente */
+  flex-grow: 1; /* Permite que el contenido crezca */
+  justify-content: space-between; /* Botón al fondo */
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Desplazamiento hacia arriba */
-  box-shadow: 0 8px 16px var(--shadow-dark); /* Sombra más fuerte */
+  transform: scale(1.05); /* Agranda la tarjeta un 5% */
+  box-shadow: 0 8px 16px var(--shadow-dark); /* Sombra más fuerte al pasar el mouse */
 }
 
 .card-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--darka-blue); /* Azul vibrante */
+  font-size: 1.6rem;
+  color: #0056b3; /* Azul profundo */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-decoration: underline; /* Opción para destacar */
+  color: #5a5a5a; /* Gris oscuro para contraste */
 }
 
 .card-text ul {
@@ -832,38 +861,169 @@ header {
 }
 
 .card-text ul li {
-  font-size: 0.9rem;
-  color: var(--deep-gray); /* Azul grisáceo */
+  font-size: 0.95rem !important;
+  font-weight: 400 !important; /* Letra ligera */
+  color: #5a5a5a !important; /* Gris oscuro */
+  text-decoration: dotted;
 }
 
+.card-text ul li strong {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important; /* Resalta las palabras clave */
+  color: #333 !important; /* Negro más oscuro */
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2) !important; /* Sombra para énfasis */
+  background-color: #f9f9f9 !important; /* Fondo claro */
+  padding: 2px 4px !important; /* Más espaciado */
+  border-radius: 4px !important; /* Bordes redondeados */
+  
+}
+
+.card-text ul li::marker {
+  color: #28a745; /* Verde para los puntos (bullet points) */
+}
+
+
 .card-img-top {
-  transition: transform 0.3s ease; /* Transición suave para el zoom o rotación */
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
 }
 
 .card:hover .card-img-top {
-  transform: scale(1.05) rotate(2deg); /* Zoom y ligera rotación */
+  transform: none; /* Elimina cualquier cambio de escala o movimiento */
 }
-
-
-
 
 .btn-primary {
-  background-color: var(--darka-blue); /* Azul principal */
-  border-color: var(--darka-blue); /* Azul principal */
-  color: var(--white);
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 5px; /* Esquinas redondeadas */
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #007bff; /* Azul vibrante */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 90%;
+  height: auto;
+  border-radius: 6px; /* Más redondeado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
 }
 
-.btn-primary:active {
-transform: scale(0.95); /* Efecto de rebote al hacer clic */
-}
 .btn-primary:hover {
-  background-color: var(--hover-blue); /* Azul más profundo en hover */
-  border-color: var(--hover-blue);
-  transform: scale(1.05); /* Efecto de agrandamiento */
+  background-color: #0056b3; /* Azul más oscuro en hover */
+  color: white;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Más sombra al pasar el mouse */
 }
+
+@media (max-width: 768px) {
+  #packages .row > .col-md-4 {
+    margin-bottom: 2rem; /* Aumenta el espacio entre las tarjetas */
+  }
+
+  .card {
+    margin-bottom: 1rem; /* Espaciado adicional entre tarjetas */
+  }
+
+  .card:hover {
+    transform: scale(1.02); /* Agranda la tarjeta un 5% */
+  }
+}
+
+
+/*Popular Card*/
+
+
+/* Agregar transición al hover */
+.popular-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35); /* Más sombra */
+}
+
+.ribbon {
+  position: absolute;
+  top: -25px; /* Ubicado justo en la parte superior de la tarjeta */
+  width: 100%; /* Cubre todo el ancho de la tarjeta */
+  background-color: #28a745; /* Color verde (puedes ajustarlo) */
+  color: white; /* Texto blanco */
+  padding: 10px 0; /* Espaciado vertical */
+  text-align: center; /* Texto centrado */
+  font-size: 1rem; /* Tamaño de fuente adecuado */
+  font-weight: bold; /* Texto destacado */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  border-radius: 5px; /* Bordes redondeados */
+  z-index: 10; /* Asegura que quede por encima del contenido */
+  border-radius: 5px 5px 0 0; /* Bordes superiores redondeados */
+}
+
+
+
+/* Para personalizar aún más el listón */
+.popular-card .ribbon {
+  background-color: #f7190d; /* Cambia a un color más brillante si se desea */
+  font-size: 1.2rem; /* Tamaño más prominente */
+  letter-spacing: 1px; /* Más espacio entre letras */
+}
+
+
+/*TABS*/
+
+/* General Tabs */
+/* Tabs Estilo Moderno */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: center; /* Centra los tabs */
+}
+
+.tab-link {
+  padding: 10px 20px;
+  background-color: #f8f9fa; /* Fondo claro */
+  border: 1px solid #ddd; /* Borde claro */
+  border-radius: 12px 12px 0 0; /* Esquinas superiores redondeadas */
+  cursor: pointer;
+  color: #555; /* Letra gris */
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-link.active {
+  background-color: #007bff; /* Fondo azul vibrante */
+  color: white; /* Letra blanca para tab activo */
+  font-weight: bold;
+  border-bottom: none; /* Sin borde inferior para tab activo */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2); /* Sombra superior */
+}
+
+.tab-link:hover {
+  background-color: #0056b3; /* Azul más oscuro */
+  color: white; /* Letra blanca en hover */
+}
+
+/* Contenido del Tab */
+.tab-content {
+  display: none;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px;
+  border: 1px solid #ddd; /* Borde claro */
+  border-radius: 0 12px 12px 12px; /* Redondeo inferior */
+  color: #000; /* Letra negra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin-top: -1px; /* Alineación con los tabs */
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tabs .tab-content ul li {
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  color: #5a5a5a !important;
+}
+
+.tabs .tab-content ul li strong {
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  color: #000 !important;
+}
+
+
+
+
+
 
 
 /* ==================================================
@@ -873,24 +1033,24 @@ transform: scale(0.95); /* Efecto de rebote al hacer clic */
 /* FAQ Section Styling */
 #faq {
   background-color: #eef6ff; /* Color diferenciado */
-  padding: 60px 20px; /* Espaciado amplio */
+  padding: 80px 40px; /* Más espacio alrededor */
 }
 
 #faq h2 {
   color: #0077b6; /* Azul consistente con los paquetes */
   font-weight: bold;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
+  font-size: 2.2rem; /* Aumenta el tamaño de la fuente */
+  margin-bottom: 40px; /* Más espacio debajo del título */
 }
 
 .faq-container {
-  max-width: 800px;
+  max-width: 900px; /* Aumenta el ancho máximo */
   margin: 0 auto;
 }
 
 .faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  border-bottom: 2px solid #ddd; /* Línea más gruesa */
+  padding: 20px 0; /* Más espacio entre las preguntas */
 }
 
 .faq-question {
@@ -898,16 +1058,15 @@ transform: scale(0.95); /* Efecto de rebote al hacer clic */
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
   font-weight: bold;
   color: #333;
 }
 
-
 .toggle-btn {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem; /* Botón más grande */
   font-weight: bold;
   color: #0077b6;
   cursor: pointer;
@@ -921,37 +1080,17 @@ transform: scale(0.95); /* Efecto de rebote al hacer clic */
 .faq-answer {
   max-height: 0; /* Altura inicial cerrada */
   overflow: hidden; /* Oculta el contenido que exceda la altura */
-  transition: max-height 0.4s ease, padding-top 0.1s ease; /* Transición suave para altura y espaciado */
+  transition: max-height 0.4s ease, padding-top 0.2s ease; /* Transición suave para altura y espaciado */
   padding-top: 0; /* Sin espacio inicial */
   color: #555;
-  font-size: 0.95rem;
-  padding-top: 10px;
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  line-height: 1.8; /* Espaciado entre líneas para legibilidad */
+  padding-top: 20px; /* Más espacio entre pregunta y respuesta */
 }
 
 .faq-answer.open {
-  max-height: 300px; /* Ajusta esto según la longitud máxima de tus respuestas */
-  padding-top: 10px; /* Espacio visible al abrir */
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.faq-answer {
-  padding-top: 10px;
-  font-size: 1rem;
-  color: #555;
-}
-
-
-.toggle-btn.open {
-  transform: rotate(45deg);
+  max-height: 600px; /* Ajusta según la longitud máxima de las respuestas */
+  padding-top: 20px; /* Espaciado visible al abrir */
 }
 
 
