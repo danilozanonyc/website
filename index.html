@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <!-- Otros metadatos importantes -->
   <meta name="author" content="Daniel Lozano">
   <meta charset="UTF-8">
@@ -13,16 +14,17 @@
   <link rel="preload" href="path/to/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- Meta descripción optimizada -->
-  <meta name="description" content="Mejora tus habilidades de baile con clases privadas de salsa en Nueva York impartidas por Daniel Lozano. Programas personalizados para todos los niveles.">
+  <meta name="description" content="Improve your dance skills with private salsa lessons in New York City taught by Daniel Lozano. Personalized programs for all levels.">
   
   <!-- Palabras clave -->
-  <meta name="keywords" content="clases de salsa en NYC, clases privadas de salsa, lecciones de baile en Nueva York, aprende salsa con Daniel Lozano, salsa para principiantes en NYC, instructor de salsa NYC, salsa avanzada en NYC">
+  <meta name="keywords" content="salsa classes in NYC, private salsa lessons, dance lessons in New York, learn salsa with Daniel Lozano, beginner salsa classes in NYC, salsa instructor NYC, advanced salsa in NYC">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -59,8 +61,8 @@
   {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Clases Privadas de Salsa en NYC",
-      "description": "Mejora tus habilidades de baile con clases privadas de salsa en Nueva York impartidas por Daniel Lozano.",
+      "name": "Private Salsa Lessons in NYC",
+      "description": "Improve your dance skills with private salsa lessons in New York City taught by Daniel Lozano.",
       "address": {
           "@type": "PostalAddress",
           "streetAddress": "58-40 77th Pl",
@@ -76,20 +78,21 @@
   </script>
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Clases Privadas de Salsa en NYC | Aprende con Daniel Lozano">
-  <meta property="og:description" content="Mejora tus habilidades de baile con clases privadas de salsa en Nueva York impartidas por Daniel Lozano.">
+  <meta property="og:title" content="Private Salsa Lessons in NYC | Learn with Daniel Lozano">
+  <meta property="og:description" content="Improve your dance skills with private salsa lessons in New York City taught by Daniel Lozano.">
   <meta property="og:url" content="https://danimambo.nyc">
   <meta property="og:type" content="website">
 
+
   <!-- Twitter Cards Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Clases Privadas de Salsa en NYC | Aprende con Daniel Lozano">
-  <meta name="twitter:description" content="Mejora tus habilidades de baile con clases privadas de salsa en Nueva York impartidas por Daniel Lozano.">
+<meta name="twitter:title" content="Private Salsa Lessons in NYC | Learn with Daniel Lozano">
+<meta name="twitter:description" content="Improve your dance skills with private salsa lessons in New York City taught by Daniel Lozano.">
+
 
 </head>
 
 <body>
-
  <!-- Header -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -193,6 +196,19 @@
 
       <!-- Columna 2 -->
       <div class="col-md-4">
+        <i class="fa-solid fa-user-plus fa-3x mb-3 text-white"></i>        
+        <h4 class="text-light" data-lang="en">Join Our Community</h4>
+        <h4 class="text-light" data-lang="es" style="display: none;">Haz parte de nuestra comunidad</h4>
+        <p class="text-white" data-lang="en">
+          Become part of a growing community of <span class="counter" id="counter-hd" data-target="50">0</span>+ <strong>dedicated students</strong> who have transformed their salsa skills.
+        </p>
+        <p class="text-white" data-lang="es" style="display: none;">
+          Conviértete en parte de una comunidad creciente de <span class="counter" id="counter-hd" data-target="50">0</span>+ <strong>estudiantes dedicados</strong> que han transformado sus habilidades en salsa.
+        </p>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-md-4">
         <i class="fas fa-clock fa-3x mb-3 text-white"></i>
         <h4 class="text-light" data-lang="en">Personalized Growth</h4>
         <h4 class="text-light" data-lang="es" style="display: none;">Crecimiento Personalizado</h4>
@@ -204,18 +220,7 @@
         </p>
       </div>
 
-      <!-- Columna 3 -->
-      <div class="col-md-4">
-        <i class="fas fa-video fa-3x mb-3 text-white"></i>
-        <h4 class="text-light" data-lang="en">HD Class Access</h4>
-        <h4 class="text-light" data-lang="es" style="display: none;">Acceso a Clases en HD</h4>
-        <p class="text-white" data-lang="en">
-          Unlimited replays with <span class="counter" id="counter-hd" data-target="300">0</span> professional video recordings.
-        </p>
-        <p class="text-white" data-lang="es" style="display: none;">
-          Reproducciones ilimitadas con <span class="counter" id="counter-hd" data-target="300">0</span> grabaciones de video profesionales.
-        </p>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -295,7 +300,7 @@
       <!-- Card Trial Package -->
 <div class="col-md-4 d-flex align-items-stretch">
   <div class="card shadow h-100">
-    <img src="img/2.avif" loading="lazy" class="card-img-top" alt="Trial Package">
+    <img src="img/trial_package.webp" loading="lazy" class="card-img-top" alt="Trial Package">
     <div class="card-body">
       <!-- Título -->
       <h5 class="card-title text-primary mb-3 text-center" data-lang="en">Trial Package</h5>
@@ -353,7 +358,7 @@
       <div class="card shadow-lg h-100 border-primary popular-card" style="border-width: 3px;">
         <div data-lang="en" class="ribbon">Most popular</div>
         <div data-lang="es" class="ribbon">Más popular</div>
-        <img src="img/3.avif" loading="lazy" class="card-img-top" alt="Standard Package">
+        <img src="img/standard_package.webp" loading="lazy" class="card-img-top" alt="Standard Package">
         <div class="card-body">
           <h5 class="card-title text-primary mb-3 text-center" data-lang="en">Standard Package</h5>
           <h5 class="card-title text-primary mb-3 text-center" data-lang="es" style="display: none;">Paquete Estándar</h5>
@@ -399,7 +404,7 @@
    <!-- Card Premium Growth Package -->
 <div class="col-md-4 d-flex align-items-stretch">
   <div class="card shadow h-100">
-    <img src="img/1.avif" loading="lazy" class="card-img-top" alt="Premium Growth Package">
+    <img src="img/premium_package.webp" loading="lazy" class="card-img-top" alt="Premium Growth Package">
     <div class="card-body">
       <h5 class="card-title text-primary mb-3 text-center" data-lang="en">Premium Growth Package</h5>
       <h5 class="card-title text-primary mb-3 text-center" data-lang="es" style="display: none;">Paquete Premium de Crecimiento</h5>
@@ -440,6 +445,64 @@
         data-package="Premium Growth Package"
         data-price="500"
         data-classes="10 sessions">
+        <span data-lang="en">Book Now!</span>
+        <span data-lang="es" style="display: none;">¡Reserva Ahora!</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Card Single Session Package -->
+<div class="col-md-4 d-flex align-items-stretch">
+  <div class="card shadow h-100">
+    <img src="img/single_session_package.webp" loading="lazy" class="card-img-top" alt="Single Session Package">
+    <div class="card-body">
+      <!-- Título -->
+      <h5 class="card-title text-primary mb-3 text-center" data-lang="en">Single Session Package</h5>
+      <h5 class="card-title text-primary mb-3 text-center" data-lang="es" style="display: none;">Paquete de Sesión Única</h5>
+
+      <!-- Precio -->
+      <p class="text-center" data-lang="en"><strong>$80</strong> for 1 session</p>
+      <p class="text-center" data-lang="es" style="display: none;"><strong>$80</strong> por 1 sesión</p>
+
+      <!-- Pestañas -->
+      <div class="tabs">
+        <button class="tab-link active" data-tab="features-single" data-lang="en">Features</button>
+        <button class="tab-link active" data-tab="features-single" data-lang="es" style="display: none;">Características</button>
+        <button class="tab-link" data-tab="why-choose-single" data-lang="en">Why Choose This Package?</button>
+        <button class="tab-link" data-tab="why-choose-single" data-lang="es" style="display: none;">¿Por qué elegir este paquete?</button>
+      </div>
+
+      <!-- Contenido de las pestañas -->
+      <div id="features-single" class="tab-content active">
+        <ul>
+          <li data-lang="en">• Fully personalized class tailored to your needs.</li>
+          <li data-lang="en">• Perfect for quick practice or focused improvement.</li>
+          <li data-lang="en">• Great for those with a busy schedule.</li>
+
+          <li data-lang="es" style="display: none;">• Clase completamente personalizada según tus necesidades.</li>
+          <li data-lang="es" style="display: none;">• Perfecto para práctica rápida o mejora enfocada.</li>
+          <li data-lang="es" style="display: none;">• Ideal para quienes tienen un horario ocupado.</li>
+        </ul>
+      </div>
+      <div id="why-choose-single" class="tab-content">
+        <ul>
+          <li data-lang="en">• Flexible option for a busy schedule.</li>
+          <li data-lang="en">• Quick feedback and personalized guidance.</li>
+          <li data-lang="en">• Try salsa dancing without long-term commitment.</li>
+
+          <li data-lang="es" style="display: none;">• Opción flexible para un horario ocupado.</li>
+          <li data-lang="es" style="display: none;">• Retroalimentación rápida y guía personalizada.</li>
+          <li data-lang="es" style="display: none;">• Prueba bailar salsa sin compromiso a largo plazo.</li>
+        </ul>
+      </div>
+
+      <!-- Botón -->
+      <a href="#" class="btn btn-primary text-white book-now mt-3 d-block mx-auto"
+        data-package="Single Session Package"
+        data-price="80"
+        data-classes="1 session">
         <span data-lang="en">Book Now!</span>
         <span data-lang="es" style="display: none;">¡Reserva Ahora!</span>
       </a>
